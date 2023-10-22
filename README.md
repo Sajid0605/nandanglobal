@@ -1,2 +1,2 @@
 # nandanglobal
-Remote Fulltime WordPress Developer For Nandan Global Task
+Remote Fulltime WordPress Developer Task For Nandan Global
