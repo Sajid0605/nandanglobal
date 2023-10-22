@@ -29,51 +29,51 @@
 <div id="page" class="site container">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'nandanglobal' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
-			<div class="container-fluid">
-				<div class="collapse navbar-collapse d-lg-flex">
-					<?php
-						if ( is_front_page() ) :
-							?>
-							<h1 class="site-title navbar-brand col-lg-3 justify-content-lg-end"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php
-						else :
-							?>
-							<p class="site-title navbar-brand col-lg-3 justify-content-lg-end"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-							<?php
-						endif;
-					?>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Eleventh navbar example">
+      <div class="container-fluid">
+	  	<?php
+			if ( is_front_page() ) :
+				?>
+				<h1 class="site-title navbar-brand col-lg-3 justify-content-lg-end"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php
+			else :
+				?>
+				<p class="site-title navbar-brand col-lg-3 justify-content-lg-end"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+			endif;
+		?>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-					<?php
-						wp_nav_menu(
-							array(
-								'menu_class' => 'navbar-nav col-lg-6 justify-content-lg-center',
-								'container' => false,
-								'theme_location' => 'main',
-								'items_wrap' => '
-										<ul class="%2$s">
-											%3$s
-										</ul>
-										',
-								'walker' => new NG_Nav_Menu_Walker_Simple
-							)
-						);
-					?>
-					
-					<?php if(is_user_logged_in()): ?>
-						<div class="d-lg-flex col-lg-3 justify-content-lg-center">
-							<ul class="navbar-nav">
-								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $current_user->display_name; ?></a>
-									<ul class="dropdown-menu">										
-										<li><a class="dropdown-item" href="<?php echo wp_logout_url(); ?>">Log Out</a></li>
-									</ul>
-								</li>
+        <div class="navbar-collapse collapse d-lg-flex" id="navbarsExample09" style="">
+			<?php
+				wp_nav_menu(
+					array(
+						'menu_class' => 'navbar-nav col-lg-7 justify-content-lg-center',
+						'container' => false,
+						'theme_location' => 'main',
+						'items_wrap' => '
+								<ul class="%2$s">
+									%3$s
+								</ul>
+								',
+						'walker' => new NG_Nav_Menu_Walker_Simple
+					)
+				);
+			?>
+          	<?php if(is_user_logged_in()): ?>
+				<div class="d-lg-flex col-lg-5 justify-content-lg-center">
+					<ul class="navbar-nav">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $current_user->display_name; ?></a>
+							<ul class="dropdown-menu">										
+								<li><a class="dropdown-item" href="<?php echo wp_logout_url(); ?>">Log Out</a></li>
 							</ul>
-						</div>
-					<?php endif; ?>
+						</li>
+					</ul>
 				</div>
-			</div>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+			<?php endif; ?>
+        </div>
+      </div>
+    </nav>
