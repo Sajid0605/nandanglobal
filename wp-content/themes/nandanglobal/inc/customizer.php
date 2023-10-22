@@ -5,8 +5,12 @@
  * @package Nandan_Global
  */
 
-
-add_image_size( 'favicon_img_size', 32, 32 );
+/**
+ * Adding custom image sizes 
+*/
+if ( function_exists( 'add_image_size' ) ) {
+	add_image_size( 'favicon_img_size', 32, 32 );
+}
 
 
 /**
@@ -126,7 +130,8 @@ class NG_Nav_Menu_Walker_Simple extends Walker_Nav_Menu
 
 		$attributes  = trim( $attributes );
 		$title       = apply_filters( 'the_title', $item->title, $item->ID );
-		$item_output = "<img src='$image_url' class='img-thumbnail d-block m-auto'>$args->before<a class='nav-link $class_names' $attributes>$args->link_before$title</a>"
+		$item_output = "$args->before<a class='nav-link $class_names' $attributes>
+						<img src='$image_url' class='img-thumbnail d-block m-auto'>$args->link_before$title</a>"
 						. "$args->link_after$args->after";
 
 		// Since $output is called by reference we don't need to return anything.
