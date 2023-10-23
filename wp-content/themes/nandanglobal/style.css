@@ -967,3 +967,133 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+
+/**
+* Custom CSS
+*/
+
+.container-fluid .nav-link {
+	display: inline-block;
+}
+
+ul.profile-information {
+    list-style: none;
+    margin: 0;
+}
+
+ul.profile-information li {
+    border-left: solid 10px #ffdc00;
+    padding: 20px 0 20px 40px;
+    font-size: 14px;
+    color: #ffdc00;
+    border-bottom: 1px solid #ddd;
+}
+
+ul.profile-information li h1,
+ul.profile-information li h2,
+ul.profile-information li h3,
+ul.profile-information li h4 {
+    color: #000;
+}
+
+ul.profile-information li:first-child {
+    border-top: 0;
+}
+
+
+ul.profile-information li p {
+    font-size: 14px;
+    color: #7F7F7F;
+    line-height: 20px;
+}
+
+ul.profile-information li:last-child {
+    margin-left: 0px;
+    margin-top: -2px;
+    height: auto;
+}
+
+ul.profile-information li:before {
+    content: "";
+    border: solid 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    font-size: 8px;
+    margin-left: -65px;
+    margin-top: 2px;
+    font-weight: 400;
+    background: #fff;
+    display: block;
+    position: absolute;
+}
+
+ul.profile-information li span {
+    color: #000;
+}
+
+
+ul.profile-information li:first-child {
+    padding-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+}
+
+ul.profile-information li:first-child {
+    padding-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    border-bottom: solid 10px #ffdc00;
+    width: 50%;
+    border-right: solid 10px #ffdc00;
+    border-left: 0;
+}
+
+
+ul.profile-information li:first-child img {
+    margin: -44px -44px;
+    display: inline-block;
+    position: absolute;
+    width: 25px;
+}
+
+ul.profile-information li:first-child:before {
+    content: "";
+    border: solid 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    font-size: 8px;
+    margin-left: -38px;
+    margin-top: 2px;
+    font-weight: 400;
+    background: #fff;
+    display: block;
+    position: absolute;
+    top: -20px;
+    right: -25px;
+}
+
+ul.profile-information li:first-child:after {
+    /* background: url(../images/glasses-w.png) no-repeat; */
+    content: '';
+    width: 30px;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 16px -15px;
+    background-size: 27px 10px;
+}
+
+.ng-footer {
+    width: auto;
+    height: 200px;
+    background-color: #ffdc00;
+
+}

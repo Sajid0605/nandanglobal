@@ -10,22 +10,23 @@
  */
 
 ?>
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'nandanglobal' ) ); ?>">
+	<footer id="colophon" class="site-footer py-3 text-center text-body-secondary bg-body-tertiary">
+		<div class="site-info d-block justify-content-between p-4">
+			<p>
+				<?php printf( esc_html__( 'Proudly powered by ', 'nandanglobal' ), 'WordPress' ); ?>
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'nandanglobal' ) ); ?>"> WordPress</a>
+			</p>
+			<p>© 2023 
 				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'nandanglobal' ), 'WordPress' );
+					/* translators: 1: Theme name, 2: Theme author. */
+					printf( esc_html__( 'Made with %1$s by %2$s.', 'nandanglobal' ),
+					'<strong><img draggable="false" role="img" class="emoji" alt="❤️" src="https://s.w.org/images/core/emoji/14.0.0/svg/2764.svg"></strong>',
+					'<a href="https://iamsajidansari.com/">Sajid Ansari</a>' );
 				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'nandanglobal' ), 'nandanglobal', '<a href="https://iamsajidansari.com/">Sajid Ansari</a>' );
-				?>
+			</p>
 		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+  	</footer><!-- #colophon -->
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
