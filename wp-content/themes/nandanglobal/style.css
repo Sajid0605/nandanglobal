@@ -973,6 +973,12 @@ textarea {
 * Custom CSS
 */
 
+
+
+.owl-tip-of-the-day {
+	background-color: #ffdc00;
+}
+
 .container-fluid .nav-link {
 	display: inline-block;
 }
@@ -1095,5 +1101,4 @@ ul.profile-information li:first-child:after {
     width: auto;
     height: 200px;
     background-color: #ffdc00;
-
 }

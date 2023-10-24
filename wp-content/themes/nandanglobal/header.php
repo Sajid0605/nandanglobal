@@ -22,12 +22,49 @@
 
 <?php
 	 global $current_user; wp_get_current_user();
+	 
+	
+	// Query the posts:
+	
 ?>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site container">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'nandanglobal' ); ?></a>
+
+	<?php 
+
+		$args = array(  
+			'post_type' => 'daily-tip',
+			'post_status' => 'publish',
+			'posts_per_page' => -1, 
+			'order' => 'ASC', 
+		);
+		$obituary_query = new WP_Query($args);
+		
+
+		if($obituary_query->found_posts): ?>
+			<div class="owl-carousel owl-theme text-center owl-tip-of-the-day py-1">
+				<?php while ($obituary_query->have_posts()) : $obituary_query->the_post();
+					// Echo some markup
+					$title = get_the_title();
+					$tips_of_the_day = get_field('tips_of_the_day', $post->ID);
+					$end_date = get_field('end_date', $post->ID);
+					$dateTimestamp1 = strtotime($end_date); 
+					$dateTimestamp2 = strtotime(date('Y-m-d'));
+					
+					echo '<div class="item d-inline-block text-center">';
+						if($dateTimestamp1 < $dateTimestamp2 ){
+							echo '<p>'. $title . ' : ' . $tips_of_the_day . '</p>';
+						}
+					echo '</div>'; // Markup closing tags.
+				endwhile; ?>
+			</div>
+		<?php endif;
+		// Reset Post Data
+		wp_reset_postdata();
+	?>
 
 	<nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Eleventh navbar example">
       <div class="container-fluid">

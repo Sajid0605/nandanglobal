@@ -80,3 +80,40 @@ function run_daily_tips() {
 
 }
 run_daily_tips();
+
+
+function daily_tip_post_type_init() {
+	// REGISTER CUSTOM POST TYPE
+	register_post_type('daily-tip', array(
+		'label' => __('Tips of the Day','daily-tip'),
+		'singular_label' => __('Tip of the Day','daily-tip'),
+		'public' => true,
+		'show_ui' => true,
+		'publicly_queryable' => true,
+		'exclude_from_search' => false,
+		'hierarchical'=>false,
+		'query_var' => true,
+		'capability_type' => 'post', //should be yclad
+		/*
+		'edit_cap' => 'edit_daily-tip',
+		'edit_type_cap' => 'edit_daily-tips',
+		'edit_others_cap' => 'edit_others_daily-tips',
+		'publish_cap' => 'publish_daily-tips',
+		'read_cap' => 'read_daily-tip',
+		'read_private_cap' => 'read_private_daily-tips',
+		'delete_cap' => 'delete_daily-tip',
+		*/
+		'supports' => array('title', 'editor', 'author','excerpt','custom-fields'),
+		'rewrite' => array( 'slug' => __('daily-tip','yclads-slugs'), 'with_front' => false )
+	));
+	
+	add_post_type_support( 'daily-tip', 'post-thumbnails' );
+
+	// Create thumbnail sizes
+	add_image_size( 'daily-tip_large', 500, 500 );
+	add_image_size( 'daily-tip_normal', 200, 200 );
+	add_image_size( 'daily-tip_thumb', 100,100 ); 
+
+}
+// Initiate the class
+add_action("init", "daily_tip_post_type_init");
