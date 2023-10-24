@@ -110,7 +110,7 @@ class NG_Nav_Menu_Walker_Simple extends Walker_Nav_Menu
 	 * @param  array $args    Additional strings.
 	 * @return void
 	 */
-	public function start_el( &$output, $item, $depth, $args )
+	public function start_el( &$output, $category, $depth = 0, $args = array(), $current_object_id = 0)
 	{
 		$output     .= '<li class="nav-item">';
 		$attributes  = '';
@@ -150,8 +150,7 @@ class NG_Nav_Menu_Walker_Simple extends Walker_Nav_Menu
 	 * @param string $output Passed by reference. Used to append additional content.
 	 * @return void
 	 */
-	public function start_lvl( &$output )
-	{
+	public function start_lvl(&$output, $depth = 0, $args = array()) {
 		$output .= '<ul>';
 	}
 
@@ -161,8 +160,7 @@ class NG_Nav_Menu_Walker_Simple extends Walker_Nav_Menu
 	 * @param string $output Passed by reference. Used to append additional content.
 	 * @return void
 	 */
-	public function end_lvl( &$output )
-	{
+	public function end_lvl( &$output, $depth = 0, $args = array()) {
 		$output .= '</ul>';
 	}
 
@@ -172,8 +170,7 @@ class NG_Nav_Menu_Walker_Simple extends Walker_Nav_Menu
 	 * @param string $output Passed by reference. Used to append additional content.
 	 * @return void
 	 */
-	function end_el( &$output )
-	{
+	function end_el( &$output, $category, $depth = 0, $args = array()) {
 		$output .= '</li>';
 	}
 }
