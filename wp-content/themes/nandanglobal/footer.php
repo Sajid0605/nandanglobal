@@ -34,12 +34,11 @@
 <script>
 		var owl = jQuery('.owl-carousel');
 		owl.owlCarousel({
-			nav:true,
 			items:1,
 			loop:true,
 			margin:10,
 			autoplay:true,
-			autoplayTimeout:1000,
+			autoplayTimeout:2500,
 			autoplayHoverPause:true
 		});
 		jQuery('.play').on('click',function(){
