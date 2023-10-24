@@ -51,14 +51,15 @@
 					$title = get_the_title();
 					$tips_of_the_day = get_field('tips_of_the_day', $post->ID);
 					$end_date = get_field('end_date', $post->ID);
-					$dateTimestamp1 = strtotime($end_date); 
-					$dateTimestamp2 = strtotime(date('Y-m-d'));
+
+					$date1 = new DateTime($end_date);
+					$date2 = new DateTime(date('Y-m-d h:m:s'));
 					
-					echo '<div class="item d-inline-block text-center">';
-						if($dateTimestamp1 < $dateTimestamp2 ){
-							echo '<p>'. $title . ' : ' . $tips_of_the_day . '</p>';
-						}
-					echo '</div>'; // Markup closing tags.
+					if($date1 > $date2 ){
+						echo '<div class="item d-inline-block text-center">';
+						echo '<p>'. $title . ' : ' . $tips_of_the_day . '</p>';
+						echo '</div>'; // Markup closing tags.
+					}
 				endwhile; ?>
 			</div>
 		<?php endif;
