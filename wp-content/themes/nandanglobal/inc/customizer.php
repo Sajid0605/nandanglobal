@@ -110,7 +110,7 @@ class NG_Nav_Menu_Walker_Simple extends Walker_Nav_Menu
 	 * @param  array $args    Additional strings.
 	 * @return void
 	 */
-	public function start_el( &$output, $category, $depth = 0, $args = array(), $current_object_id = 0)
+	public function start_el( &$output, $item, $depth = 0, $args=[], $current_object_id = 0 )
 	{
 		$output     .= '<li class="nav-item">';
 		$attributes  = '';
