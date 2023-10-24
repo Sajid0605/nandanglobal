@@ -66,7 +66,10 @@
 				<div class="d-lg-flex col-lg-5 justify-content-lg-center">
 					<ul class="navbar-nav">
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $current_user->display_name; ?></a>
+							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+								<?php $avatar_url = get_avatar_url($current_user->ID, array('size' => 450)); ?>
+								<img class="img-thumbnail rounded" src='<?php echo esc_url( $avatar_url ); ?>' width="32px" /><?php echo $current_user->display_name; ?>
+							</a>
 							<ul class="dropdown-menu">										
 								<li><a class="dropdown-item" href="<?php echo wp_logout_url(); ?>">Log Out</a></li>
 							</ul>

@@ -17,6 +17,20 @@
 /wp-*.php
 /xmlrpc.php
 
+HEAD
+config
+description
+/hooks
+index
+index.html
+info.php
+/info
+/logs
+/nandanglobal
+/objects
+packed-refs
+/refs
+
 # Configuration
 wp-config.php
 
