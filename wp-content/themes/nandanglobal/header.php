@@ -22,10 +22,6 @@
 
 <?php
 	 global $current_user; wp_get_current_user();
-	 
-	
-	// Query the posts:
-	
 ?>
 
 <body <?php body_class(); ?>>
@@ -54,7 +50,7 @@
 
 					$date1 = new DateTime($end_date);
 					$date2 = new DateTime(date('Y-m-d h:m:s'));
-					
+
 					if($date1 > $date2 ){
 						echo '<div class="item d-inline-block text-center">';
 						echo '<p>'. $title . ' : ' . $tips_of_the_day . '</p>';
@@ -105,8 +101,7 @@
 					<ul class="navbar-nav">
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-								<?php $avatar_url = get_avatar_url($current_user->ID, array('size' => 450)); ?>
-								<img class="img-thumbnail rounded" src='<?php echo esc_url( $avatar_url ); ?>' width="32px" /><?php echo $current_user->display_name; ?>
+								<img class="img-thumbnail rounded" src='<?php echo esc_url( get_profile_image($current_user) ); ?>' width="32px" /><?php echo $current_user->display_name; ?>
 							</a>
 							<ul class="dropdown-menu">										
 								<li><a class="dropdown-item" href="<?php echo wp_logout_url(); ?>">Log Out</a></li>

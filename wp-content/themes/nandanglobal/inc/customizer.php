@@ -177,3 +177,17 @@ class NG_Nav_Menu_Walker_Simple extends Walker_Nav_Menu
 		$output .= '</li>';
 	}
 }
+
+function get_profile_image($user_data) {
+
+	$defaul_profile_image = get_field('image', 'option');
+
+	$hash = md5(strtolower(trim($user_data->user_email)));
+	$uri = 'http://www.gravatar.com/avatar/' . $hash . '?d=404';
+	$headers = @get_headers($uri);
+	if (!preg_match("|200|", $headers[0])) {
+		return $defaul_profile_image['sizes']['favicon_img_size'];
+	} else {
+		return get_avatar_url($user_data->ID, array('size' => 450));
+	}
+}
